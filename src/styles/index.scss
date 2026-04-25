@@ -1,1 +1,60 @@
 @use "./tailwind";
+
+:root {
+  --container-width: 1200px;
+  --header-height: 95px;
+  --color-primary: 10 98 202;
+  --color-heading: 16 24 40;
+  --color-text: 1 8 32;
+  --color-muted: 102 102 102;
+  --color-subtle: 71 84 103;
+  --color-line: 216 222 232;
+  --color-panel: 249 250 251;
+  --color-nav: 34 34 34;
+  --color-hairline: 244 244 244;
+  --color-divider: 234 236 240;
+  --color-slider: 212 225 230;
+  --color-success: 22 255 46;
+  --color-link-blue: 43 132 255;
+  --color-footer-bg: 234 244 255;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricprecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:where(a, a:visited) {
+  color: inherit;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
