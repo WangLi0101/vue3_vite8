@@ -1,3 +1,3 @@
 <template>
-  <div class="home">11</div>
+  <div class="home flex bg-black">11</div>
 </template>
