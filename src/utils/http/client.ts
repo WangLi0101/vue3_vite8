@@ -1,15 +1,14 @@
 import axios, { AxiosHeaders } from "axios";
-import type { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
+import { CODE, handlerError } from "./code";
+import { isDownloadResponseType } from "./types";
 import { SERVICE_URL_MAP } from "@/config/api";
-import type { ServiceName } from "@/config/api";
 import { store } from "@/stores";
 import { useAuthStore } from "@/stores/modules/auth";
-import type { ApiResponse } from "@/types/http";
 import { ApiRequestError } from "@/types/http";
 import { showErrorToast } from "@/utils/toast";
 import { formatToken, getAccessToken, getRefreshToken } from "@/utils/token";
-import { CODE, handlerError } from "./code";
+
 import type {
   DownloadDataMap,
   DownloadRequestConfig,
@@ -17,7 +16,9 @@ import type {
   RequestMeta,
   RequestConfig,
 } from "./types";
-import { isDownloadResponseType } from "./types";
+import type { ServiceName } from "@/config/api";
+import type { ApiResponse } from "@/types/http";
+import type { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
 interface InternalRequestConfig<D = unknown> extends InternalAxiosRequestConfig<D>, RequestMeta {
   // 标记当前请求是否已经完成过一次自动重试，避免 token 过期时重复刷新。

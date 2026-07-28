@@ -1,4 +1,5 @@
 import { request } from "@/utils/http";
+
 import type {
   CaptchaResponse,
   CurrentUserResponse,

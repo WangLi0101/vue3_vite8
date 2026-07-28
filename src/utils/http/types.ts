@@ -1,5 +1,5 @@
-import type { AxiosRequestConfig, AxiosResponse } from "axios";
 import type { ApiResponse } from "@/types/http";
+import type { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export type HttpResponse<T> = AxiosResponse<ApiResponse<T>>;
 export type DownloadResponseType = "blob" | "arraybuffer";

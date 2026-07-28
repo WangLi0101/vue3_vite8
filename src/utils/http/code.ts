@@ -1,5 +1,6 @@
-import type { ApiResponse } from "@/types/http";
 import { showErrorToast } from "@/utils/toast";
+
+import type { ApiResponse } from "@/types/http";
 interface HandlerErrorOptions {
   silent?: boolean;
 }

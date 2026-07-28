@@ -1,10 +1,12 @@
-import type { App } from "vue";
 import { createRouter, createWebHashHistory } from "vue-router";
-import type { LocationQueryRaw } from "vue-router";
+
+import { staticRoutes } from "./routes";
 import { store } from "@/stores";
 import { useAuthStore } from "@/stores/modules/auth";
 import { getAccessToken, setAccessToken, setAuthTokens } from "@/utils/token";
-import { staticRoutes } from "./routes";
+
+import type { App } from "vue";
+import type { LocationQueryRaw } from "vue-router";
 
 const omitAuthTokenQuery = (query: LocationQueryRaw): LocationQueryRaw => {
   const {
