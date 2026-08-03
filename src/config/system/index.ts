@@ -20,8 +20,7 @@ const getCurrentAppUrl = (): string => {
  * back to this app with `accessToken` and `refreshToken` query parameters.
  */
 export const getAdminLoginUrl = (): string => {
-  const configuredUrl = import.meta.env.VITE_ADMIN_APP_URL?.trim();
-  const adminUrl = configuredUrl || DEFAULT_ADMIN_URL_MAP[import.meta.env.MODE];
+  const adminUrl = DEFAULT_ADMIN_URL_MAP[import.meta.env.MODE];
   const redirectUrl = getCurrentAppUrl();
 
   return `${removeTrailingSlash(adminUrl)}/#/login?redirect=${encodeURIComponent(redirectUrl)}`;
