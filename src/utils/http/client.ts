@@ -115,8 +115,12 @@ class HttpClient {
     return this.handleJsonResponseSuccess(response, originalRequest);
   };
 
-  // HTTP 层异常兜底处理：统一提示通用错误，并包装成业务侧可识别的异常对象。
+  // HTTP 层异常兜底处理：主动取消直接透传，其余异常统一提示并包装。
   private handleResponseError = (error: AxiosError<ApiResponse<unknown> | Blob | ArrayBuffer>) => {
+    if (axios.isCancel(error)) {
+      return Promise.reject(error);
+    }
+
     const httpStatus = error.response?.status ?? 0;
     const message = "服务繁忙，请稍后重试";
     const requestConfig = error.config as InternalRequestConfig | undefined;
