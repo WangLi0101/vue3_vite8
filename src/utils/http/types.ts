@@ -6,7 +6,6 @@ export type DownloadResponseType = "blob" | "arraybuffer";
 type NonDownloadResponseType = Exclude<AxiosRequestConfig["responseType"], DownloadResponseType>;
 
 export interface RequestMeta {
-  isPublic?: boolean;
   skipErrorToast?: boolean;
 }
 
